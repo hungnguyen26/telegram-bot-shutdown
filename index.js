@@ -8,7 +8,6 @@ bot.start((ctx) => ctx.reply('Welcome'))
 bot.command('tatmay', (ctx) => {
     const time = 60
 
-    // shutdown in [time] seconds
     const cmd = `shutdown -s -f -t ${time}`
 
     exec(cmd, (error) => {
@@ -26,7 +25,6 @@ bot.command('tatmay', (ctx) => {
 })
 bot.launch()
 
-// Enable graceful stop
 process.once('SIGINT', () => bot.stop('SIGINT'))
 process.once('SIGTERM', () => bot.stop('SIGTERM'))
 
